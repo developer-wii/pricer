@@ -1,0 +1,341 @@
+
+.well {
+  background-color: #eeeeee !important;
+}
+
+
+.design-button, .style-color-span {
+  display: inline-block; }
+
+#ribbonLabel, .select-column {
+  margin-bottom: 10px; }
+ .select-column {
+  margin: 10px; }
+
+
+.webindia-demo {
+  margin-top: -50px; }
+
+.glyphicon {
+  margin-right: 10px; }
+
+.panel-body {
+  padding: 0; }
+
+
+
+.webindia-demo .main-panel:hover, .webindia-demo .secondary-panel:hover {
+  cursor: pointer; }
+.webindia-demo a {
+  text-decoration: none; }
+  .webindia-demo a:active, .webindia-demo a:focus, .webindia-demo a:hover {
+    text-decoration: none; }
+
+#color-panel, #option-content, #price-content, #title-content, #tooltipColor, #button, #ribbon, #tooltip {
+  margin: 5px 0; }
+
+#ribbonColor, #tooltipColor{
+    margin: 15px 20px;
+}
+
+#column-count, .column-count-div {
+  text-align: center;
+
+	/* from new age*/
+    margin: 10px;
+}
+
+#column-recommendation {
+  font-weight: lighter;
+  display: block;
+  font-size: 12px; }
+
+
+/*
+#style-button {
+  margin: 5px 0;
+  width: 110px; }
+
+#effect-button {
+  margin: 15px 0 10px; }
+*/
+
+#effect-button,
+#style-button {
+    margin: 15px auto;
+    width: 100%;
+}
+
+#selectColumnForButton, #selectColumnForColoring, #selectColumnForContent, #selectColumnForRibbon, #selectColumnForTooltip, #selectOptionforTooltip {
+  display: inline-block;
+  width: 65px; }
+
+#selectRibbonPosition, #selectTooltipPlacement, #selectTooltipPosition {
+  display: inline-block;
+  width: 85px; }
+
+#selectOptionForTooltip {
+  display: inline-block;
+  width: 65px; }
+
+#tooltip-content, #select-tooltip-position-div {
+  margin-top: 20px; }
+
+#select-ribbon-position-div {
+  margin: 10px 0 20px; }
+
+#select-column-div-tooltip, #select-option-div-tooltip {
+  display: block;
+  margin: 10px; }
+
+
+/*
+#select-ribbon {
+  margin: 10px 0 -10px; }
+*/
+
+#select-ribbon {
+    margin: 10px 0 0;
+    display: block;
+}
+
+
+
+#ribbon-type-radio {
+  display: block; }
+
+.style-color-span {
+  position: absolute;
+  right: 12 px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  background-color: #008b8b; }
+
+.color-nav-list li {
+  border: 1px solid #eee; }
+
+
+.color-nav-list {
+    margin: 10px;
+}
+
+
+/*
+#column-title-div {
+  margin: 10px 0;
+  display: inline; }
+*/
+
+#column-title-div {
+    margin: 20px;
+}
+
+.option-content-buttons {
+  display: inline; }
+
+#addButton, #removeButton {
+  margin: 5px 0; }
+
+#column-price-div label {
+  margin-left: 0;
+  padding-left: 0; 
+
+}
+.table-option {
+  margin: 10px 0;
+  display: inline-block; }
+
+.option-text {
+  width: 50%;
+  margin-left: 10px; }
+
+
+#column-button-div {
+    margin: 15px;
+}
+
+
+#column-button-div input {
+  width: 50%; }
+.style-color-span {
+  right: 16px;
+}
+
+/*
+.prices {
+  position: relative;
+  margin: 3px 0; }
+*/
+
+.prices {
+    position: relative;
+    margin: 10px 12px;
+}
+
+  .prices .option-text-price {
+    width: 50%;
+    position: absolute;
+    display: inline-block;
+    right: 0; }
+
+#select-button {
+  display: block;
+  margin-top: 10px; }
+
+.button-form {
+  display: inline-block;
+  margin: 0 15px; }
+
+.button-type {
+  left: 10%; }
+
+#button-code-generate {
+  position: relative; }
+
+#button-generate {
+  margin-top: 20px;
+  margin-left: 20%;
+  width: 60%; }
+
+#column-color-default {
+  background-color: #23abdd; }
+
+#column-color-gray {
+  background-color: #9fa8a3; }
+
+#column-color-brown {
+  background-color: #7d4627; }
+
+#column-color-red {
+  background-color: #e62739; }
+
+#column-color-purple {
+  background-color: #9068be; }
+
+#column-color-green {
+  background-color: #173e43; }
+
+#column-color-orangered {
+  background-color: #ff4500; }
+
+#column-color-forestgreen {
+  background-color: #228b22; }
+
+#column-color-pink {
+  background-color: #eb65a0; }
+
+#column-color-golden {
+  background-color: #ccc51c; }
+
+#column-color-darkmagenta {
+  background-color: #8B008B; }
+
+#column-color-fuchsia {
+  background-color: #f0f; }
+
+#column-color-turquoise {
+  background-color: #43C6DB; }
+
+#column-color-fresh {
+  background-color: #4ABDAC; }
+
+#column-color-lavendar {
+  background-color: #6D7993; }
+
+
+
+#designGroup {
+    margin: 15px;
+}
+
+.select-column-div {
+    margin-top: 10px
+}
+
+.color-list {
+    color: rgb(190, 45, 80)
+}
+
+#selectRibbonPosition {
+    width: 80%;
+    margin: 0 10%;
+}
+
+#ribbon-content-div {
+    margin: 15px;
+}
+
+#contentGroup {
+    margin: 15px;
+}
+
+.content-div {
+    margin: 15px;
+}
+
+
+#go-documentation {
+  font-size: 21px;
+  margin: 15px;
+  margin-bottom: -30px; }
+
+#generator-heading-text {
+  font-size: 25px;
+  margin-top: 15px;
+  text-align: center;
+  margin-bottom: -30px; }
+
+.toggle-button {
+  margin: 10px 0; }
+
+#ribbon-color-dark-aquamarine {
+  background-color: #458b74; }
+
+#ribbon-color-cated-blue {
+  background-color: #5f9ea0; }
+
+#ribbon-color-dark-green {
+  background-color: #458b00; }
+
+#ribbon-color-chocolate {
+  background-color: #d2691e; }
+
+#ribbon-color-green {
+  background-color: #00ff00; }
+
+#ribbon-color-hot-pink {
+  background-color: #ff69b4; }
+
+#ribbon-color-indian-red {
+  background-color: #ff6a6a; }
+
+#ribbon-color-magenta {
+  background-color: #ee00ee; }
+
+#ribbon-color-purple {
+  background-color: #9370db; }
+
+#ribbon-color-red {
+  background-color: #ee0000; }
+
+#ribbon-color-royal-blue {
+  background-color: #4169e1; }
+
+#ribbon-color-yellow {
+  background-color: #eeee00; }
+
+#ribbon-color-black {
+  background-color: #000000; }
+
+#ribbon-color-dark-blue {
+  background-color: #00008B; }
+
+#ribbon-color-maroon {
+  background-color: #800000; }
+
+#ribbon-color-saddle-brown {
+  background-color: #8B4513; }
+
+#ribbon-color-aqua {
+  background-color: #00FFFF; }
