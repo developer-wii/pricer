@@ -12,7 +12,7 @@ var webindiaRibbonAdded = [false, false, false, false, false, false];
 var webindiaRibbonTybe = [1, 1, 1, 1, 1, 1];
 var webindiaRibbonPosition = ["left", "left", "left", "left", "left", "left"];
 var selectedRibbonColor = ['dark-aquamarine', 'dark-aquamarine', "dark-aquamarine", "dark-aquamarine", "dark-aquamarine", "dark-aquamarine"];
-var $=jQuery;
+
 var currentStyle = 1;
 
 var tooltipColor = [new Array(15), new Array(15), new Array(15), new Array(15), new Array(15), new Array(15)];
@@ -129,8 +129,8 @@ function selectColumnforChanging() {
 	selectColumnForContentChanging();
 	selectColumnForButtonChanging();
 	selectColumnForRibbonChanging();
-	//selectColumnForTooltipChanging();
-    //selectOptionForTooltipChanging();
+	selectColumnForTooltipChanging();
+    selectOptionForTooltipChanging();
 }
 
 //Select Column to change color of the column
@@ -138,7 +138,7 @@ function selectColumnForColorChanging() {
     var newColumnCountOption;
     var optionText;
     var optionAttribute;
-    jQuery('#selectColumnForColoring').empty();
+    $('#selectColumnForColoring').empty();
 
     for ( var j = 0; j <= columnCount; j++) {
         newColumnCountOption = document.createElement('option');
@@ -162,7 +162,7 @@ function selectColumnForContentChanging() {
     var newColumnCountOption;
     var optionText;
     var optionAttribute;
-    jQuery('#selectColumnForContent').empty();
+    $('#selectColumnForContent').empty();
 
     for ( var j = 0; j <= columnCount; j++) {
         newColumnCountOption = document.createElement('option');
@@ -185,7 +185,7 @@ function selectColumnForButtonChanging() {
     var newColumnCountOption;
     var optionText;
     var optionAttribute;
-   jQuery('#selectColumnForButton').empty();
+    $('#selectColumnForButton').empty();
 
     for ( var j = 0; j <= columnCount; j++) {
         newColumnCountOption = document.createElement('option');
@@ -208,7 +208,7 @@ function selectColumnForRibbonChanging() {
     var newColumnCountOption;
     var optionText;
     var optionAttribute;
-    jQuery('#selectColumnForRibbon').empty();
+    $('#selectColumnForRibbon').empty();
 
     for ( var j = 1; j <= columnCount; j++) {
         newColumnCountOption = document.createElement('option');
@@ -225,11 +225,11 @@ function selectColumnForRibbonChanging() {
 }
 
 //Select Column to change Tooltip of the column
-/*function selectColumnForTooltipChanging() {
+function selectColumnForTooltipChanging() {
     var newColumnCountOption;
     var optionText;
     var optionAttribute;
-    jQuery('#selectColumnForTooltip').empty();
+    $('#selectColumnForTooltip').empty();
 
     for ( var j = 1; j <= columnCount; j++) {
         newColumnCountOption = document.createElement('option');
@@ -243,11 +243,11 @@ function selectColumnForRibbonChanging() {
         newColumnCountOption.setAttributeNode(optionAttribute);
 		document.getElementById("selectColumnForTooltip").appendChild(newColumnCountOption);
     }
-}*/
+}
 
 
 //Select Option to change Tooltip of the column
-/*function selectOptionForTooltipChanging() {
+function selectOptionForTooltipChanging() {
     var optionLength = document.getElementsByClassName('webindia-options')[document.getElementById('selectColumnForTooltip').value - 1].getElementsByTagName('li').length;
     var newColumnCountOption;
     var optionText;
@@ -266,7 +266,7 @@ function selectColumnForRibbonChanging() {
         newColumnCountOption.setAttributeNode(optionAttribute);
 		document.getElementById("selectOptionForTooltip").appendChild(newColumnCountOption);
     }
-}*/
+}
 
 
 //webindia Pricing Table Color function
@@ -654,14 +654,29 @@ function buttonEffectFunction(effect) {
 function takeCode() {
   var code = document.getElementById('allTable').innerHTML;
   var name = jQuery ('#url').val();
-  var columnCount = document.getElementById("column-count").value;
-    alert(columnCount);
+    var title = jQuery ('#title_wpenlight').val();
+	   var shortcode  = jQuery ('#shortcode').val();
   var encodedString = btoa(code);
   var encoded = encodeURIComponent(name);
   {
 
-       jQuery.ajax({ type: 'POST',url: 'admin-ajax.php',data: { action:'save_data',f0: encodedString,f1:encoded ,f2:columnCount}, success: function(result){
-           alert('Table Saved Successfully'); 
+       jQuery.ajax({ type: 'POST',url: 'admin-ajax.php',data: { action:'save_data',f0: encodedString,f1:encoded ,f2:title,f3:shortcode}, success: function(result){
+           alert('Table Saved Successfully');
+        }}); }
+
+	 jQuery('.alert').show();
+}
+function takeCodeedit() {
+  var code = document.getElementById('allTable').innerHTML;
+  var name = jQuery ('#url').val();
+    var title = jQuery ('#title_wpenlight').val();
+	   var shortcode  = jQuery ('#shortcode').val();
+  var encodedString = btoa(code);
+  var encoded = encodeURIComponent(name);
+  {
+
+       jQuery.ajax({ type: 'POST',url: 'admin-ajax.php',data: { action:'edit_data',f0: encodedString,f1:encoded ,f2:title,f3:shortcode}, success: function(result){
+           alert('Table Edit Successfully');
         }}); }
 
 	 jQuery('.alert').show();
@@ -789,7 +804,7 @@ function tooltipColumnFunction(){
 	var selectedColumnforTooltip = document.getElementById("selectColumnForTooltip").value;
 	var selectedOptionforTooltip = document.getElementById("selectOptionForTooltip").value;
 
-	//selectOptionForTooltipChanging();
+	selectOptionForTooltipChanging();
 
      var option = document.getElementsByClassName('webindia-options')[document.getElementById('selectColumnForTooltip').value - 1].getElementsByTagName('li')[selectedOptionforTooltip-1].getElementsByTagName('a').length;
 

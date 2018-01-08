@@ -14,9 +14,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 /* !8. ADMIN PAGES */
 include_once( plugin_dir_path( __FILE__ ) . 'assets/admin/admin-pages.php' );
+
+/* Post type */
+  include ( plugin_dir_path( __FILE__ ). 'includes/post-type.php');
+
 /* !4. EXTERNAL SCRIPTS */
 include_once( plugin_dir_path( __FILE__ ) . 'assets/admin/internal-scripts.php' );
 include_once( plugin_dir_path( __FILE__ ) . 'assets/frontend/external-scripts.php' );
+
 /* !2. SHORTCODES */
 include_once( plugin_dir_path( __FILE__ ) . 'assets/frontend/table-show.php' );
 //include_once( plugin_dir_path( __FILE__ ) . 'assets/admin/table-data.php' );
@@ -29,9 +34,10 @@ function ept_plugin_create_table() {
 	$table_name = $wpdb->prefix . 'ept_data';
 	$sql = "CREATE TABLE $table_name (
 		id mediumint(9) NOT NULL AUTO_INCREMENT,
+		`name` text NOT NULL,
+		`shortcode` text NOT NULL,
 		`user_id` int(8) NOT NULL,
 		`data` text NOT NULL,
-        `no_collumn` int(11) NOT NULL,
 		UNIQUE KEY id (id)
 	) $charset_collate;";
 	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
@@ -54,20 +60,20 @@ function ept_save_data()
   global $wpdb;
 $table_name= $wpdb->prefix.'ept_data';
 $data=esc_html($_POST['f0']);
-$no_of_collumn = $_POST['f2'];
-    echo $no_of_collumn;
 $Sanitize_Html = sanitize_html_class($data);
 $id=get_current_user_id();
 $Sanitize_User = sanitize_user($id);
-$numRows = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name");
-    if($numRows == 0){
+$title = esc_html($_POST['f2']);
+$shortcode = esc_html($_POST['f3']);
+/*$numRows = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name");
+    if($numRows == 0){*/
               $wpdb->insert(
               $table_name,
-              array('data' => $data, 'user_id' => $Sanitize_User,'no_collumn' =>$no_of_collumn ),
+              array('data' => $data, 'user_id' => $Sanitize_User,'name' =>$title,'shortcode' => $shortcode),
               array('%s', '%s')
         );
-} else {
-				//echo $data;
+/*} else {
+				echo $data;
         $wpdb->update(
                 $table_name, //table
                 array('data' => $data),
@@ -75,6 +81,6 @@ $numRows = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name");
                 array('%s'),
                 array('%s')
         );
-      }
+      }*/
 }
 ?>
